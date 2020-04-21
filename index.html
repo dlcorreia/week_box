@@ -5,13 +5,24 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <header>This is your life by week!</header>
+        <header>
+            <h1>
+                This is your life by week!
+            </h1> 
+        </header>
         <main>
-            <section>
-                <div class="week-boxes">
-                    <div class="year year1">
-                        <div class="box week1"></div>
-                        <div class="box week2"></div>
+            <section class="control-panel">
+                <h2>Control panel</h2>
+                <div>
+                    <p>Incluir aqui o formulário que vai receber os dados a serem plotados</p>
+                </div>
+            </section>
+            <section class="life-visualizer">
+                <h2>Life visualizer</h2>
+                <div class="weeks-box" id="visualizer">
+                    <!-- <div class="year year1"> -->
+                        <!-- <div class="box week1"></div>
+                        <div class="box week2"></div> -->
                     </div>
                 </div>
             </section>
@@ -21,8 +32,20 @@
             const numWeeks = 52;
             const numYears = 90;
 
-            const year1 = document.getElementsByClassName("year1");
-            console.log(`${year1.length} com os seguintes anos: ${year1.getName}`);
+            for(let year = 0; year < numYears; year++) {
+                const year = document.createElement('div');
+                year.setAttribute('class', 'year');
+                visualizer.appendChild(year);
+                console.log('Criou um ano!')
+
+                for(let weeks = 0; weeks < numWeeks; weeks++) {
+                    const divWeek = document.createElement('div');
+                    divWeek.setAttribute('class', 'box');
+                    year.appendChild(divWeek);
+                    console.log('Criou uma div!');
+                }
+            }
+
         </script>
     </body>
 </html>
